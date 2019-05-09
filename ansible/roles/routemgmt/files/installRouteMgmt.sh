@@ -58,17 +58,17 @@ $WSK_CLI -i --apihost "$APIHOST" package update --auth "$AUTH"  --shared no "$NA
 echo Creating NPM module .zip files
 cd "$OPENWHISK_HOME/core/routemgmt/getApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
-npm install
+npm install --no-bin-links
 zip -r getApi.zip *
 
 cd "$OPENWHISK_HOME/core/routemgmt/createApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
-npm install
+npm install --no-bin-links
 zip -r createApi.zip *
 
 cd "$OPENWHISK_HOME/core/routemgmt/deleteApi"
 cp "$OPENWHISK_HOME/core/routemgmt/common"/*.js .
-npm install
+npm install --no-bin-links
 zip -r deleteApi.zip *
 
 echo Installing apimgmt actions
